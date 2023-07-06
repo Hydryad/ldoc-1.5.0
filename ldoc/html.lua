@@ -59,6 +59,7 @@ local escape_table = { ["'"] = "&apos;", ["\""] = "&quot;", ["<"] = "&lt;", [">"
 function html.generate_output(ldoc, args, project)
    local check_directory, check_file, writefile = tools.check_directory, tools.check_file, tools.writefile
    local original_ldoc
+
    local function save_and_set_ldoc (set)
       if not set then return end
       if not original_ldoc then
@@ -284,7 +285,6 @@ function ldoc.source_ref (fun)
          module = module,
          _escape = ldoc.template_escape
       })
-      print(out)
       if not out then
          quit(("template failed for %s: %s"):format(
                module and module.name or ldoc.output or "index",
@@ -301,6 +301,7 @@ function ldoc.source_ref (fun)
    ldoc.ipairs = ipairs
    ldoc.pairs = pairs
    ldoc.print = print
+
    -- Bang out the index.
    -- in single mode there is one module and the 'index' is the
    -- documentation for that module.
@@ -357,6 +358,7 @@ function ldoc.source_ref (fun)
          mods:append {kind, lkind, modules}
       end
    end
+
    -- write out the per-module documentation
    -- note that we reset the internal ordering of the 'kinds' so that
    -- e.g. when reading a topic the other Topics will be listed first.

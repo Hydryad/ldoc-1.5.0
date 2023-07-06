@@ -5,8 +5,7 @@ local globals = {}
 local lua52 = _VERSION:match '5.2'
 local lua53 = _VERSION:match '5.3'
 local lua54 = _VERSION:match '5.4'
-local debug = require 'debug'
-local io = require 'io'
+
 
 globals.functions = {
    assert = true,

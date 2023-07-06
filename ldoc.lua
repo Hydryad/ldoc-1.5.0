@@ -146,7 +146,7 @@ local file_types = {
 -- the ldoc table represents the API available in `config.ld`.
 local ldoc = { charset = 'UTF-8', version = version }
 
-local known_types, kind_names = {}, {}
+local known_types, kind_names = {}
 
 local function lookup (itype,igroup,isubgroup)
    local kn = kind_names[itype]
@@ -202,6 +202,7 @@ function ldoc.alias (a,tag)
 end
 
 -- standard aliases --
+
 ldoc.alias('tparam',{'param',modifiers={type="$1"}})
 ldoc.alias('treturn',{'return',modifiers={type="$1"}})
 ldoc.alias('tfield',{'field',modifiers={type="$1"}})
@@ -889,7 +890,7 @@ elseif source_date_epoch == nil then
     ldoc.updatetime = args.date
   end
 else
-  ldoc.updatetime = os.date("!%Y-%m-%d %H:%M:%S", tonumber(source_date_epoch))
+  ldoc.updatetime = os.date("!%Y-%m-%d %H:%M:%S",source_date_epoch)
 end
 
 local html = require 'ldoc.html'
