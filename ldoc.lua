@@ -33,7 +33,8 @@ local version = '1.5.0'
 
 -- so we can find our private modules
 app.require_here()
-
+dbg = require("debugger")
+dbg.
 --- @usage
 local usage = [[
 ldoc, a documentation generator for Lua, v]]..version..[[
