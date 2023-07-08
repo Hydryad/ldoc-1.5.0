@@ -20,7 +20,7 @@
             "program": {
                 "command": "ldoc"
             },
-            "args": ["-c ./config.ld ../../rts/Lua/LuaSyncedCtrl.cpp"]
+            "args": ["."]
         }
     ]
 }

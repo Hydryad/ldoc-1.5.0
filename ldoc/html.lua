@@ -301,7 +301,7 @@ function ldoc.source_ref (fun)
    ldoc.ipairs = ipairs
    ldoc.pairs = pairs
    ldoc.print = print
-
+   -- ldoc.dbg()
    -- Bang out the index.
    -- in single mode there is one module and the 'index' is the
    -- documentation for that module.
@@ -322,7 +322,7 @@ function ldoc.source_ref (fun)
    restore_ldoc()
 
    check_directory(args.dir) -- make sure output directory is ok
-
+   -- ldoc.dbg()
    -- project icon
    if ldoc.icon then
       local dir_data = args.dir .. '/data'

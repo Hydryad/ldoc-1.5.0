@@ -33,8 +33,7 @@ local version = '1.5.0'
 
 -- so we can find our private modules
 app.require_here()
-dbg = require("debugger")
-dbg.
+
 --- @usage
 local usage = [[
 ldoc, a documentation generator for Lua, v]]..version..[[
@@ -897,6 +896,10 @@ end
 local html = require 'ldoc.html'
 
 html.generate_output(ldoc, args, project)
+
+local annoHack = require 'ldoc.annohack'
+
+annoHack.testprint(ldoc, args, project)
 
 if args.verbose then
    print 'modules'
